@@ -1,0 +1,37 @@
+<h1>App</h1>
+
+message is {{message | uppercase }} <br>
+
+message is {{message | lowercase }} <br> 
+
+message is {{message | titlecase  }} <br>
+
+price value is {{price | currency}}  <br>
+
+value1 is {{value1|number:'2.2-3'}} <br>
+
+student value is {{student | json}}  <br>
+
+
+student value is {{studentString}}  <br>
+
+Today is {{currentDate | date:"long"}} <br>
+
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+    </tr>    
+    <tr>
+        <td><input type="text" name="id" [(ngModel)]="id"></td>
+        <td><input type="text"  name="name" [(ngModel)]="name"></td>
+    </tr>
+    <tr *ngFor="let s of students|datafilter:id:name">
+        <td>{{s.id}}</td>
+        <td>{{s.name}}</td>
+    </tr>
+</table>
+
+message using abc pipe is {{ message | basic : "upper" }}
+
+message using abc pipe is {{ message | basic : "lower" }}
